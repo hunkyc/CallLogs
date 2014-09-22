@@ -19,8 +19,8 @@ public class dashboardMainLinksTests {
 
     @Before
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
-//        driver = new HtmlUnitDriver();
+//        driver = new FirefoxDriver();
+        driver = new HtmlUnitDriver();
         driver.manage().deleteAllCookies();
         baseUrl = "https://dashboard.nascomms.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -57,7 +57,7 @@ public class dashboardMainLinksTests {
     @Test
     public void shouldDisplayCallLogsPage () throws Exception {
         successfulLogin();
-        driver.findElement(By.id("calllogs")).click();
+        driver.findElement(By.id("CallLogs-mmListNav")).click();
         assertEquals("Call Logs - Nascomms Dashboard", driver.getTitle());
         successsfulLogout();
     }
@@ -65,7 +65,7 @@ public class dashboardMainLinksTests {
     @Test
     public void shouldDisplayReportsPage () throws Exception {
         successfulLogin();
-        driver.findElement(By.id("reports")).click();
+        driver.findElement(By.id("Reports-mmListNav")).click();
         assertEquals("Reports - Nascomms Dashboard", driver.getTitle());
         successsfulLogout();
     }
@@ -73,23 +73,23 @@ public class dashboardMainLinksTests {
     @Test
     public void shouldDisplayHaveAChatPage () throws Exception {
         successfulLogin();
-        driver.findElement(By.id("haveachat")).click();
+        driver.findElement(By.id("HaveAChat-mmListNav")).click();
         assertEquals("Have a Chat - Nascomms Dashboard", driver.getTitle());
         successsfulLogout();
     }
 
-    @Test
-    public void shouldDisplayAccountsPage () throws Exception {
-        successfulLogin();
-        driver.findElement(By.id("accounts")).click();
-        assertEquals("Services Home - Nascomms Dashboard", driver.getTitle());
-        successsfulLogout();
-    }
+//    @Test
+//    public void shouldDisplayAccountsPage () throws Exception {
+//        successfulLogin();
+//        driver.findElement(By.id("accounts")).click();
+//        assertEquals("Services Home - Nascomms Dashboard", driver.getTitle());
+//        successsfulLogout();
+//    }
 
     @Test
     public void shouldDisplayManagementSummaryPage () throws Exception {
         successfulLogin();
-        driver.findElement(By.id("management")).click();
+        driver.findElement(By.id("Management-mmListNav")).click();
         assertEquals("Management Summary - Nascomms Dashboard", driver.getTitle());
         successsfulLogout();
     }
@@ -97,7 +97,7 @@ public class dashboardMainLinksTests {
      @Test
     public void shouldDisplayAssistancePage () throws Exception {
         successfulLogin();
-        driver.findElement(By.id("assistance")).click();
+        driver.findElement(By.id("Tickets-mmListNav")).click();
         assertEquals("Tickets - Nascomms Dashboard", driver.getTitle());
          successsfulLogout();
     }
@@ -106,7 +106,7 @@ public class dashboardMainLinksTests {
     public void shouldDisplayLoginPage () throws Exception {
         successfulLogin();
         driver.findElement(By.id("logout")).click();
-        assertEquals("Nascomms Dashboard", driver.getTitle());
+        assertEquals("Home - Nascomms Dashboard", driver.getTitle());
     }
 
     @After

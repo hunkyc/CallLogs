@@ -35,9 +35,10 @@ public class callLogs {
     public void shouldDisplayCorrectRecordsWhenSelectAllServicesFromDropList() {
         successfulLogin();
         driver.findElement(By.id("CallLogs-mmListNav")).click();
-        driver.findElement(By.cssSelector("span.k-input")).click();
+        driver.findElement(By.cssSelector("span.k-icon.k-i-arrow-s")).click();
         driver.findElement(By.id("SearchParams_AccountID_option_selected")).click();
-        driver.findElement(By.cssSelector("input[value='Search']")).click();
+
+//        driver.findElement(By.cssSelector("input[value='Search']")).click();
 //        TODO direct connect to Db to extract records and compare with displayed results
     }
 
