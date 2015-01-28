@@ -30,14 +30,14 @@ public class haveAChat {
     @Before
     public void setUp() throws Exception {
         //when using HTML Unit driver headless / no browser
-//        driver = new HtmlUnitDriver();
+        driver = new HtmlUnitDriver();
 
         //when using Firefox browser
 //        driver = new FirefoxDriver();
 
         //when using google chrome browser
-        System.setProperty("webdriver.chrome.driver", "/home/martin/Applications/ChromeDriver/chromedriver");
-        driver = new ChromeDriver();
+//        System.setProperty("webdriver.chrome.driver", "/home/martin/Applications/ChromeDriver/chromedriver");
+//        driver = new ChromeDriver();
 
         //used by all drivers
         driver.manage().deleteAllCookies();
