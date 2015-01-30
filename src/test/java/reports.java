@@ -4,21 +4,16 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.interactions.Actions;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
 
 public class reports {
+    private final overheadLogin overheadLogin = new overheadLogin(this);
     WebDriver driver;
-    String baseUrl;
+//    String baseUrl;
     String reportsButton = "Reports-mmListNav";
     String goButton = "body > div.body > div.one_third > form > input";
     String ReportsHomepageTitle = "Reports - Nascomms Dashboard";
@@ -37,9 +32,24 @@ public class reports {
         driver = new ChromeDriver();
 
 //        driver.manage().deleteAllCookies();
-        baseUrl = "https://dashboard.nascomms.com/";
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
+
+    //original @Before
+//    @Before
+//    public void setUp() throws Exception {
+////        driver = new FirefoxDriver();
+////        driver = new HtmlUnitDriver();
+////      location of chrome driver at work
+//        System.setProperty("webdriver.chrome.driver", "/Users/martin/Downloads/chromedriver");
+////      location of chrome driver at home
+////        System.setProperty("webdriver.chrome.driver", "/home/martin/Applications/ChromeDriver/chromedriver");
+//        driver = new ChromeDriver();
+//
+////        driver.manage().deleteAllCookies();
+////        baseUrl = "https://dashboard.nascomms.com/";
+////        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    }
 
 //    @Test
 //         public void shouldDisplayReportsHomePage() {
@@ -72,7 +82,7 @@ public class reports {
 
     @Test
     public void shouldCallCountsPage() {
-        successfulLogin();
+        overheadLogin.successfulLogin();
         driver.findElement(By.id(reportsButton)).click();
         driver.findElement(By.id("fmiCallCounts")).click();
         assertEquals(CallCountsPage, driver.getTitle());
@@ -141,11 +151,10 @@ public class reports {
     }
 
     private void successfulLogin() {
-        driver.get(baseUrl + "/Login/Login?ReturnUrl=%2f");
-        driver.findElement(By.id("UserName")).clear();
-        driver.findElement(By.id("UserName")).sendKeys("Martin.Smith");
-        driver.findElement(By.id("Password")).clear();
-        driver.findElement(By.id("Password")).sendKeys("BongTow");
-        driver.findElement(By.cssSelector("input.coloured_button")).click();
+        overheadLogin.successfulLogin();
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
