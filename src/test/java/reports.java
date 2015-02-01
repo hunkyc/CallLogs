@@ -22,34 +22,9 @@ public class reports {
     String CallCountsPage = "Reports - Nascomms Dashboard";
 
     @Before
-    public void setUp() throws Exception {
-//        driver = new FirefoxDriver();
-//        driver = new HtmlUnitDriver();
-//      location of chrome driver at work
-        System.setProperty("webdriver.chrome.driver", "/Users/martin/Downloads/chromedriver");
-//      location of chrome driver at home
-//        System.setProperty("webdriver.chrome.driver", "/home/martin/Applications/ChromeDriver/chromedriver");
-        driver = new ChromeDriver();
-
-//        driver.manage().deleteAllCookies();
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    public void setup() {
+        driver = overheadLogin.setup();
     }
-
-    //original @Before
-//    @Before
-//    public void setUp() throws Exception {
-////        driver = new FirefoxDriver();
-////        driver = new HtmlUnitDriver();
-////      location of chrome driver at work
-//        System.setProperty("webdriver.chrome.driver", "/Users/martin/Downloads/chromedriver");
-////      location of chrome driver at home
-////        System.setProperty("webdriver.chrome.driver", "/home/martin/Applications/ChromeDriver/chromedriver");
-//        driver = new ChromeDriver();
-//
-////        driver.manage().deleteAllCookies();
-////        baseUrl = "https://dashboard.nascomms.com/";
-////        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//    }
 
 //    @Test
 //         public void shouldDisplayReportsHomePage() {
