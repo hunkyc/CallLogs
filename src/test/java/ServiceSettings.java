@@ -9,23 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ServiceSettings {
     String baseUrl = "https://dashboard.nascomms.com/";
     WebDriver driver;
-    String ServicesPage = "Services Home - Nascomms Dashboard";
-    String AddAccountPage = "Add Account - Nascomms Dashboard";
-    String ServicesSettingsPage = "Services Settings - Nascomms Dashboard";
-    String AllServicesPage = "All Services:";
-    String ClickCallingServicesPage = "ClickCalling Services:";
-    String MTClickCallingServicesPage = "MultiTracking ClickCalling Services:";
-    String GeoCallingServicesPage = "GeoCalling Services:";
-    String MTGeoCallingServicesPage = "MultiTracking GeoCalling Services:";
-    String LeadCallingServicesPage = "LeadCalling Services:";
-    String PaCallingServicesPage = "PACalling Services:";
-    String HaveAChatServicesPage = "HaveAChat Services:";
-    String AddService = "Request Additional Services";
-    String ServicesSettings = "Services Settings:";
     String ServiceOverviewPage = "Service Overview:";
     String ServiceLabelsPage = "Service Labels:";
-
-
+    String ContactDetailsPage = "Contact Details:";
+    String CompanyDetailsPage = "Company Details:";
+    String BlockedPhoneNumbersPage = "Incoming Blocked Phone Number";
+    String VoiceMailPage = "Voicemail:";
+    String OutOfHoursPage = "Out Of Hours Method:";
 
     @Before
     public void setup() {
@@ -41,14 +31,14 @@ public class ServiceSettings {
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-//    @Test
-//    public void OverviewLink() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("settings")).click();
-//        driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > p:nth-child(4) > span:nth-child(1) > a")).click();
-//        Assert.assertEquals(ServiceOverviewPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h1")).getText());
-//    }
+    @Test
+    public void OverviewLink() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("settings")).click();
+        driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > p:nth-child(4) > span:nth-child(1) > a")).click();
+        Assert.assertEquals(ServiceOverviewPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h1")).getText());
+    }
 
     @Test
     public void LabelsLink() {
@@ -59,14 +49,50 @@ public class ServiceSettings {
         Assert.assertEquals(ServiceLabelsPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h1")).getText());
     }
 
-//    @Test
-//    public void shouldDisplayServicesSettingsPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("settings")).click();
-//        Assert.assertEquals(ServicesSettingsPage, driver.getTitle());
-//        Assert.assertEquals(ServicesSettings, driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > h1")).getText());
-//    }
+    @Test
+    public void ContactDetailsLink() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("settings")).click();
+        driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > p:nth-child(4) > span:nth-child(5) > a")).click();
+        Assert.assertEquals(ContactDetailsPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h2")).getText());
+    }
+
+    @Test
+    public void CompanyDetailsLink() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("settings")).click();
+        driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > p:nth-child(4) > span:nth-child(7) > a")).click();
+        Assert.assertEquals(CompanyDetailsPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h2")).getText());
+    }
+
+    @Test
+    public void BlockedPhoneNumbersLink() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("settings")).click();
+        driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > p:nth-child(4) > span:nth-child(9) > a")).click();
+        Assert.assertEquals(BlockedPhoneNumbersPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h1")).getText());
+    }
+
+    @Test
+    public void VoiceMailLink() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("settings")).click();
+        driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > p:nth-child(7) > span:nth-child(1) > a")).click();
+        Assert.assertEquals(VoiceMailPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h2")).getText());
+    }
+
+    @Test
+    public void OutOfHoursLink() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("settings")).click();
+        driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > p:nth-child(7) > span:nth-child(3) > a")).click();
+        Assert.assertEquals(OutOfHoursPage, driver.findElement(By.cssSelector("body > div.body > div.two_third > h2")).getText());
+    }
 
     @After
     public void tearDown() {

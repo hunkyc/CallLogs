@@ -8,10 +8,13 @@ import org.openqa.selenium.WebDriver;
 
 public class testOverhead {
 
+
     WebDriver driver;
     String baseUrl;
 
-    @Before
+    testOverhead() throws Exception{
+        setUp();
+    }
     public void setUp() throws Exception {
         driver = new FirefoxDriver();
 //        driver = new HtmlUnitDriver();
@@ -20,7 +23,6 @@ public class testOverhead {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @After
     public void tearDown() throws Exception {
         driver.quit();
 //        String verificationErrorString = verificationErrors.toString();
