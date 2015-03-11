@@ -29,104 +29,102 @@ public class services {
     public void setup() {
 //    driver = new FirefoxDriver();
 //        driver = new HtmlUnitDriver();
-//      location of chrome driver at work
-    System.setProperty("webdriver.chrome.driver", "/Users/martin/Downloads/chromedriver");
-//      location of chrome driver at home
-//        System.setProperty("webdriver.chrome.driver", "/home/martin/Applications/ChromeDriver/chromedriver");
+//      location of chrome driver
+        System.setProperty("webdriver.chrome.driver", "/home/martin/Applications/ChromeDriver/chromedriver");
         driver = new ChromeDriver();
 
 //        driver.manage().deleteAllCookies();
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-//    @Test
-//    public void shouldDisplayAllServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(AllServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayServicesSettingsPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("settings")).click();
-//        Assert.assertEquals(ServicesSettingsPage, driver.getTitle());
-//        Assert.assertEquals(ServicesSettings, driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayClickCallingServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("clickcalling")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(ClickCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayMultiTrackingClickCallingServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("mtclickcalling")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(MTClickCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayGeoCallingServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("geocalling")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(GeoCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayMultiTrackingGeoCallingServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("mtgeocalling")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(MTGeoCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayLeadCallingServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("leadcalling")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(LeadCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayPaCallingServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("pacalling")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(PaCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayHaveAChatServicesPage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("haveachat")).click();
-//        Assert.assertEquals(ServicesPage, driver.getTitle());
-//        Assert.assertEquals(HaveAChatServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
-//    }
-//
-//    @Test
-//    public void shouldDisplayAddServicePage() {
-//        successfulLogin();
-//        driver.findElement(By.id("Services-mmListNav")).click();
-//        driver.findElement(By.id("addaccount")).click();
-//        Assert.assertEquals(AddAccountPage, driver.getTitle());
-//        Assert.assertEquals(AddService, driver.findElement(By.cssSelector("body > div.body > h1")).getText());
-//    }
+    @Test
+    public void shouldDisplayAllServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(AllServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayServicesSettingsPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("settings")).click();
+        Assert.assertEquals(ServicesSettingsPage, driver.getTitle());
+        Assert.assertEquals(ServicesSettings, driver.findElement(By.cssSelector("body > div.body > div.one_third_first.settingsSideMenu > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayClickCallingServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("clickcalling")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(ClickCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayMultiTrackingClickCallingServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("mtclickcalling")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(MTClickCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayGeoCallingServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("geocalling")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(GeoCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayMultiTrackingGeoCallingServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("mtgeocalling")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(MTGeoCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayLeadCallingServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("leadcalling")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(LeadCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayPaCallingServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("pacalling")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(PaCallingServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayHaveAChatServicesPage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("haveachat")).click();
+        Assert.assertEquals(ServicesPage, driver.getTitle());
+        Assert.assertEquals(HaveAChatServicesPage, driver.findElement(By.cssSelector("body > div.body > div.three_quarter > h1")).getText());
+    }
+
+    @Test
+    public void shouldDisplayAddServicePage() {
+        successfulLogin();
+        driver.findElement(By.id("Services-mmListNav")).click();
+        driver.findElement(By.id("addaccount")).click();
+        Assert.assertEquals(AddAccountPage, driver.getTitle());
+        Assert.assertEquals(AddService, driver.findElement(By.cssSelector("body > div.body > h1")).getText());
+    }
 
     @After
     public void tearDown() {
